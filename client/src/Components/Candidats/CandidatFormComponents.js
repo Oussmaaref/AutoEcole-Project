@@ -251,6 +251,12 @@ console.log(error)
                         value={values.startDate}
                         onChange={handleInputChange}
                     />
+                    <Controls.DatePicker
+                        name="endDate"
+                        label="End Date"
+                        value={values.endDate}
+                        onChange={handleInputChange}
+                    />
                      </div>: ''}
                     <div>
                         <Controls.Button
