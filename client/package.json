@@ -1,0 +1,82 @@
+{
+  "name": "mon-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-syntax-jsx": "^7.14.5",
+    "@date-io/date-fns": "^1.3.13",
+    "@date-io/moment": "^2.11.0",
+    "@devexpress/dx-react-core": "^2.7.6",
+    "@devexpress/dx-react-scheduler": "^2.7.6",
+    "@devexpress/dx-react-scheduler-material-ui": "^2.7.6",
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fullcalendar/daygrid": "^5.9.0",
+    "@fullcalendar/react": "^5.9.0",
+    "@fullcalendar/resource-timeline": "^5.9.0",
+    "@fullcalendar/timegrid": "^5.9.0",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/data-grid": "^4.0.0-alpha.36",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.60",
+    "@material-ui/pickers": "^3.3.10",
+    "@material-ui/x-grid-data-generator": "^4.0.0-alpha.36",
+    "@material-ui/x-license": "^4.0.0-alpha.36",
+    "@mui-treasury/components": "^1.10.1",
+    "@progress/kendo-theme-material": "^4.40.1",
+    "@progress/kendo-vue-grid": "^2.4.0",
+    "@progress/kendo-vue-intl": "^2.4.0",
+    "@syncfusion/ej2-react-buttons": "^19.2.55",
+    "@syncfusion/ej2-react-schedule": "^19.2.59",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.1",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "bootstrap": "^5.0.2",
+    "date-fns": "^2.14.0",
+    "devextreme-react": "^21.1.5",
+    "generate-password": "^1.6.1",
+    "hamoni-sync": "^1.2.1",
+    "mobiscroll-react": "^4.0.0",
+    "react": "^17.0.2",
+    "react-big-calendar": "^0.35.0",
+    "react-bootstrap": "^2.0.0-beta.4",
+    "react-countdown-circle-timer": "^2.5.3",
+    "react-dom": "^17.0.2",
+    "react-notifications": "^1.7.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^1.1.5",
+    "react-window": "^1.8.6",
+    "vue-class-component": "^7.2.6",
+    "web-vitals": "^1.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.14.5",
+    "webpack-dev-server": "^1.16.5"
+  }
+}
