@@ -118,6 +118,7 @@ export default function TemplateCandidate() {
   
     localStorage.removeItem("userdata");
     localStorage.removeItem("token");
+  
     thehistory.push("/")
   }
  

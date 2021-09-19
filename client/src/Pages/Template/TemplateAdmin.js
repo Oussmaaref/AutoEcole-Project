@@ -117,6 +117,7 @@ export default function TemplateAdmin() {
   
     localStorage.removeItem("userdata");
     localStorage.removeItem("token");
+    localStorage.removeItem("feedback");
     thehistory.push("/")
   }
   

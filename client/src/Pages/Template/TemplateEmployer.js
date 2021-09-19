@@ -116,6 +116,7 @@ export default function TemplateEmployer() {
   
     localStorage.removeItem("userdata");
     localStorage.removeItem("token")
+    localStorage.removeItem("feedback");
     thehistory.push("/")
   }
   const handleDrawerOpen = () => {

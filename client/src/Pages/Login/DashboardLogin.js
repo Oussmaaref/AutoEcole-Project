@@ -47,7 +47,11 @@ const login = (e) => {
     if (response.status===200) {
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userdata",response.data.user)
-      
+      axios.get('http://localhost:5000/feedback')
+               .then(data => {console.log(data.data)
+                   let d=JSON.stringify(data.data)
+                   localStorage.setItem("feedback",d)
+                })
     
     thehistory.push("/main/admin/Home")
       console.log(response)
@@ -74,8 +78,6 @@ const login = (e) => {
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userdata",response.data.user)
       
-      
-      
     thehistory.push("/main/candidate/Feedback")
       console.log(response)
       
@@ -101,7 +103,11 @@ const login = (e) => {
     if (response.status===200) {
       localStorage.setItem("token", response.data.token)
       localStorage.setItem("userdata",response.data.user)
-      
+      axios.get('http://localhost:5000/feedback')
+               .then(data => {console.log(data.data)
+                   let d=JSON.stringify(data.data)
+                   localStorage.setItem("feedback",d)
+                })
       
       
     thehistory.push("/main/employee/Home")
@@ -139,11 +145,13 @@ const login = (e) => {
           <Typography variant={"h3"} className={"DL01-brand"} gutterBottom>
             About Us
           </Typography>
-          <Typography>Feel the power inside you.</Typography>
+          <Typography className={"DL01-description"}>Our driving school will be able to accompany you and provide you with a personalized pedagogical follow-up, 
+            throughout your learning process, until you obtain your driving license.</Typography>
           <br />
+          <Typography className={"DL01-description"}>Thanks to our experience, we are committed to offering you excellent technical training.</Typography>
+          <br/>
           <Typography className={"DL01-description"}>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry.
+          We follow-up on our candidates, we manage and plan exam sessions, code and driving sessions, and the management of vehicles in addition to a maintenance booklet per vehicle which allows the follow-up of car maintenance.
           </Typography>
         </div>
       </Grid>
@@ -209,8 +217,8 @@ const login = (e) => {
 )};
 
 DashboardLogin.getTheme = ({ palette, breakpoints }) => {
-  const gradient = `linear-gradient(49deg, ${Color(palette.primary.main).darken(0.7).toString()} 0%,
-  ${Color(palette.primary.main).rotate(30).lighten(0.5).saturate(0.7).toString()} 100%)`;
+  const gradient = `linear-gradient(49deg, ${Color(palette.primary.main).darken(0.7).toString()} 100%,
+  ${Color(palette.primary.main).rotate(30).lighten(0.5).saturate(0.7).toString()} 0%)`;
   const cover =back;
   return {
     MuiGrid: {
@@ -243,8 +251,8 @@ DashboardLogin.getTheme = ({ palette, breakpoints }) => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: gradient,
-            opacity: 0.7,
+            background: "linear-gradient(90deg, rgba(155,117,209,1) 11%, rgba(106,0,255,1) 100%, rgba(36,0,23,1) 645%)",
+            opacity: 0.2,
             
           }
         }
@@ -255,6 +263,7 @@ DashboardLogin.getTheme = ({ palette, breakpoints }) => {
           background: `url(${cover})`,
           backgroundSize: "cover",
           position: "relative",
+          
           height: 713,
           "& *": {
             color: palette.common.white
@@ -266,12 +275,16 @@ DashboardLogin.getTheme = ({ palette, breakpoints }) => {
           },
           "& .DL01-brand": {
             fontWeight: 900,
-            letterSpacing: 1
+            letterSpacing: 1,
+            fontFamily:'Brush Script MT'
           },
           "& .DL01-description": {
-            color: "rgba(255, 255, 255, 0.45)",
-            maxWidth: 240,
-            fontWeight: 200
+            color: "#fccf3a",
+            maxWidth: 500,
+            fontWeight: 200,
+            fontSize:18,
+            
+            fontFamily:'Verdana'
           }
         },
         "&.DL01-GridItem.-form": {
@@ -299,9 +312,7 @@ DashboardLogin.getTheme = ({ palette, breakpoints }) => {
               height: 60
             }
           },
-          "& .DL01-signUp": {
-            marginTop: 16
-          }
+          
         }
       }
     },

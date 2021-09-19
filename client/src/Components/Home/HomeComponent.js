@@ -95,11 +95,7 @@ function HomeComponent() {
          axios.get('http://localhost:5000/vehicule')
                .then(data => {console.log(data.data)
                    setCountcars(data.data.length)})
-       axios.get('http://localhost:5000/feedback')
-               .then(data => {console.log(data.data)
-                   let d=JSON.stringify(data.data)
-                   localStorage.setItem("feedback",d)
-                })
+       
     }, []);
     
     let data =localStorage.getItem("feedback")
