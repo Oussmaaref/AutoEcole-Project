@@ -37,8 +37,8 @@ export default function TeamForm( props ) {
             ...temp
         })
 
-        if (fieldValues === values)
-            return Object.values(temp).every(x => x === "")
+        if (fieldValues == values)
+            return Object.values(temp).every(x => x == "")
     }
     useEffect(() => {
         if (recordForEdit !== null)
@@ -106,7 +106,7 @@ console.log(error)
           numbers:true,
           symbols: false
         });
-        if( values._id === 0)
+        if( values.id == 0)
           {values.password=pwd;}
     } 
 

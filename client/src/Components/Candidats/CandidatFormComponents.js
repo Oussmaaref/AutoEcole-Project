@@ -61,8 +61,8 @@ export default function CandidatForm( props ) {
             ...temp
         })
 
-        if (fieldValues === values)
-            return Object.values(temp).every(x => x === "")
+        if (fieldValues == values)
+            return Object.values(temp).every(x => x == "")
     }
     useEffect(() => {
         if (recordForEdit != null)
@@ -87,7 +87,7 @@ export default function CandidatForm( props ) {
            console.log(edit)
            if (add && !edit)
            
-               axios.post('http://localhost:5000/candidate',{
+        axios.post('http://localhost:5000/candidate',{
         'fullName':values.fullName,
         'password':values.password,
         'age':values.age,
@@ -107,7 +107,7 @@ console.log(error)
 }
     
 )  
-axios.post('http://localhost:5000/event',{
+if (open){axios.post('http://localhost:5000/event',{
         'text':'séance de '+values.type+' de '+ values.fullName,
         'startDate':values.startDate,
         'endDate':values.endDate
@@ -118,7 +118,7 @@ axios.post('http://localhost:5000/event',{
 console.log(error)
 }
     
-)  
+)  }
   
             if (edit && !add) 
                   { 
@@ -140,18 +140,7 @@ console.log(error)
                     
                     console.log(error)
                   })
-                  axios.put(`http://localhost:5000/event/${values._id}`,{
-        'text':'séance de '+values.type+' de '+ values.fullName,
-        'startDate':values.startDate,
-        'endDate':values.endDate
-  }).then(response => {
-    console.log("event updated")
-}).catch(error => {
-
-console.log(error)
-}
-    
-)  
+                 
                 }
 
 
@@ -168,7 +157,7 @@ console.log(error)
           numbers:true,
           symbols: false
         });
-        if( values._id === 0)
+        if( values.id == 0)
           {values.password=pwd;}
     } 
 

@@ -253,8 +253,6 @@ const headCells = [
     { id: 'type/categorie', label: 'Type/Catégorie'  },
     { id: 'dateexamen', label: 'Date Examen '  },
     { id: 'payee/ apayer', label: 'Payee/A Payer'  },
-
-    
     { id: 'actions', label: 'Actions', disableSorting: true },
 ]
 
@@ -301,7 +299,8 @@ export default function CandidatsComponent() {
         axios.get('http://localhost:5000/candidate')
             .then(data => {console.log(data.data)
                 setRecords(data.data)
-                window.location.reload()})
+                window.location.reload()
+            })
         setNotify({
             isOpen: true,
             message: 'Submitted Successfully',
