@@ -29,6 +29,7 @@ const typeItems = [
 const initialFValues = {
     id: 0,
     fullName: '',
+    email:'',
     age: '' ,
     mobile: '',
     city: '',
@@ -52,7 +53,8 @@ export default function CandidatForm( props ) {
         let temp = { ...errors }
         if ('fullName' in fieldValues)
             temp.fullName = fieldValues.fullName ? "" : "This field is required."
-        
+        if ('email' in fieldValues)
+            temp.email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(fieldValues.email) ? "" : "Email is not valid."
         if ('mobile' in fieldValues)
             temp.mobile = fieldValues.mobile.length === 8 ? "" : " Mobile number is not valid."
         if ('categorieId' in fieldValues)
@@ -90,6 +92,7 @@ export default function CandidatForm( props ) {
         axios.post('http://localhost:5000/candidate',{
         'fullName':values.fullName,
         'password':values.password,
+        'email':values.email,
         'age':values.age,
         'role':values.role,
         'payee':values.payee,
@@ -125,6 +128,7 @@ console.log(error)
                       axios.put(`http://localhost:5000/candidate/${values._id}`,{
                         'fullName': values.fullName,
                         'password':values.password,
+                        'email':values.email,
                         'age':values.age,
                         'role':values.role,
                         'payee':values.payee,
@@ -178,6 +182,13 @@ console.log(error)
                         value={values.fullName}
                         onChange={handleInputChange}
                         error={errors.fullName}
+                    />
+                    <Controls.Input
+                        label="Email"
+                        name="email"
+                        value={values.email}
+                        onChange={handleInputChange}
+                        error={errors.email}
                     />
                     <Controls.Input
                         label="Age"

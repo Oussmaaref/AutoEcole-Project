@@ -29,7 +29,8 @@ const useStyles = makeStyles(theme => ({
 const headCells = [
     { id: 'fullName', label: ' Name' },
     { id: 'role', label: 'Role' },
-    { id: 'pwd', label: 'Password' }
+    { id: 'pwd', label: 'Password' },
+    {id: 'email',label:'Email'}
     
 ]
 
@@ -111,6 +112,7 @@ function UsersComponent( ) {
                                 <TableCell>{item.fullName}</TableCell>
                                 <TableCell>{item.role}</TableCell>
                                 <TableCell>{item.password}</TableCell>
+                                <TableCell>{item.email}</TableCell>
                             </TableRow>)
                         )} 
                     </TableBody>

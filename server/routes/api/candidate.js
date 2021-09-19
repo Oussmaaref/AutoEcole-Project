@@ -17,6 +17,7 @@ router.post("/",(req,res)=>{
     const newCandidat = new candidat({
       fullName : req.body.fullName,
       password:req.body.password,
+      email:req.body.email,
       role: req.body.role,
       age:req.body.age,
       type:req.body.type,
@@ -54,6 +55,7 @@ router.put("/:id",(req,res)=>{
     candidat.findByIdAndUpdate(req.params.id, {
         fullName : req.body.fullName,
         password:req.body.password,
+        email:req.body.email,
         role: req.body.role,
         age:req.body.age,
         type:req.body.type,
